@@ -17,5 +17,9 @@ namespace MyCV.Controllers
             var degerler = db.TblHakkimda.ToList();
             return View(degerler);
         }
+        public PartialViewResult Deneyim()
+        {
+            return PartialView();
+        }
     }
 }
