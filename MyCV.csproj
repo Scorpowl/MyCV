@@ -255,6 +255,7 @@
     <Content Include="Views\Default\Yeteneklerim.cshtml" />
     <Content Include="Views\Default\Projects.cshtml" />
     <Content Include="Views\Default\Sertifikalarım.cshtml" />
+    <Content Include="Views\Default\iletisim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

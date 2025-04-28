@@ -42,5 +42,18 @@ namespace MyCV.Controllers
             var sertifikalar = db.TblSertifikalarim.ToList();
             return PartialView(sertifikalar);
         }
+        [HttpGet]
+        public PartialViewResult iletisim()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult iletisim(TblIletisim t)
+        {
+            t.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            db.TblIletisim.Add(t);
+            db.SaveChanges();
+            return PartialView();
+        }
     }
 }
