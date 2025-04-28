@@ -22,5 +22,25 @@ namespace MyCV.Controllers
             var deneyimler = db.TblDeneyimlerim.ToList();
             return PartialView(deneyimler);
         }
+        public PartialViewResult Egitim()
+        {
+            var egitimler = db.TblEgitimlerim.ToList();
+            return PartialView(egitimler);
+        }
+        public PartialViewResult Yeteneklerim()
+        {
+            var yetenekler = db.TblYeteneklerim.ToList();
+            return PartialView(yetenekler);
+        }
+        public PartialViewResult Projects()
+        {
+            var projeler = db.TblHobilerim.ToList();
+            return PartialView(projeler);
+        }
+        public PartialViewResult Sertifikalarım()
+        {
+            var sertifikalar = db.TblSertifikalarim.ToList();
+            return PartialView(sertifikalar);
+        }
     }
 }
