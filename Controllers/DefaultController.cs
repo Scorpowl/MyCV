@@ -19,7 +19,8 @@ namespace MyCV.Controllers
         }
         public PartialViewResult Deneyim()
         {
-            return PartialView();
+            var deneyimler = db.TblDeneyimlerim.ToList();
+            return PartialView(deneyimler);
         }
     }
 }
