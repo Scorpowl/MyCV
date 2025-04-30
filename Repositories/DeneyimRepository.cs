@@ -6,7 +6,7 @@ using MyCV.Models.Entity;
 
 namespace MyCV.Repositories
 {
-    public class DeneyimRepository
+    public class DeneyimRepository: GenericRepository<TblDeneyimlerim>
     {
         MvcCvEntities db = new MvcCvEntities();
         public List<TblDeneyimlerim> List()
