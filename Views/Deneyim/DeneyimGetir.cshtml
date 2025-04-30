@@ -7,7 +7,7 @@
 <h2>Deneyim Güncelleme Sayfası</h2>
 
 <br />
-<form>
+<form method="post">
     @Html.Label("Deneyim ID")
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
     <br />
@@ -18,10 +18,10 @@
     @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
     <br />
     @Html.Label("Açıklama")
-    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
     <br />
     @Html.Label("Tarih")
-    @Html.TextAreaFor(x => x.Tarih, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
     <button class="btn btn-info">Güncelle</button>
 
