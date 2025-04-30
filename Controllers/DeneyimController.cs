@@ -28,5 +28,19 @@ namespace MyCV.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        public ActionResult DeneyimSil(int id)
+        {
+            TblDeneyimlerim t = repo.Find(x=>x.ID == id);
+            repo.TDelete(t);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult DeneyimGetir(int id)
+        {
+            TblDeneyimlerim t = repo.Find(x => x.ID == id);
+            return View(t);
+
+
+        }
     }
 }
