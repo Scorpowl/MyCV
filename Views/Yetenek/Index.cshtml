@@ -4,8 +4,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@{string renk = ""};
-@{string labelrenk = ""}
+@{string renk = "";}
+@{string labelrenk = "";}
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,9 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
+                                <a href="#" class="btn btn-info">Yeni yetenek ekle</a>
+                                <br />
+                                <br />
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -29,6 +32,8 @@
                                             <th>Yetenek</th>
                                             <th>Derece</th>
                                             <th style="width: 40px">Oran</th>
+                                            <th>İşlemler</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -37,35 +42,36 @@
                                             if (X.Oran >= 0 && X.Oran <= 50)
                                             {
                                                 renk = "progress-bar bg-danger";
-                                                labelrenk = "badge bg-danger"
+                                                labelrenk = "badge bg-danger";
                                             }
                                             if (X.Oran >= 51 && X.Oran <= 70)
                                             {
                                                 renk = "progress-bar bg-warning";
-                                                labelrenk = "badge bg-warning"
+                                                labelrenk = "badge bg-warning";
                                             }
                                             if (X.Oran >= 71 && X.Oran <= 84)
                                             {
                                                 renk = "progress-bar bg-primary";
-                                                labelrenk = "badge bg-primary"
+                                                labelrenk = "badge bg-primary";
                                             }
                                             if (X.Oran >= 85 && X.Oran <= 100)
                                             {
                                                 renk = "progress-bar bg-success";
-                                                labelrenk = "badge bg-success"
+                                                labelrenk = "badge bg-success";
                                             }
-
                                             <tr>
                                                 <td>@X.ID</td>
                                                 <td>@X.Yetenek</td>
                                                 <td>
                                                     <div class="progress progress-xs">
-                                                        <div class="@renk" style="width: @X.Oran"></div>
+                                                        <div class="@renk" style="width:@X.Oran%"></div>
                                                     </div>
                                                 </td>
-                                                <td><span class="@labelrenk">@X.Oran</span></td>
+                                                <td><span class="@labelrenk">@X.Oran%</span></td>
+                                                <td><a href="#" class="btn btn-default">Sil</a>
+                                                <a href="#" class="btn btn-default">Günelle</a></td>
                                             </tr>
-                                        }
+                                          }
                                     </tbody>
                                 </table>
                             </div>
