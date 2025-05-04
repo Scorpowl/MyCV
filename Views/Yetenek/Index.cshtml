@@ -4,56 +4,77 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>Yetenek listesi</h2>
+@{string renk = ""};
+@{string labelrenk = ""}
 
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Yetenek Listem</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>Yetenek</th>
-                                                <th>Derece</th>
-                                                <th style="width: 40px">Oran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var X in Model)
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th>Derece</th>
+                                            <th style="width: 40px">Oran</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var X in Model)
+                                        {
+                                            if (X.Oran >= 0 && X.Oran <= 50)
                                             {
+                                                renk = "progress-bar bg-danger";
+                                                labelrenk = "badge bg-danger"
+                                            }
+                                            if (X.Oran >= 51 && X.Oran <= 70)
+                                            {
+                                                renk = "progress-bar bg-warning";
+                                                labelrenk = "badge bg-warning"
+                                            }
+                                            if (X.Oran >= 71 && X.Oran <= 84)
+                                            {
+                                                renk = "progress-bar bg-primary";
+                                                labelrenk = "badge bg-primary"
+                                            }
+                                            if (X.Oran >= 85 && X.Oran <= 100)
+                                            {
+                                                renk = "progress-bar bg-success";
+                                                labelrenk = "badge bg-success"
+                                            }
+
                                             <tr>
                                                 <td>@X.ID</td>
                                                 <td>@X.Yetenek</td>
                                                 <td>
                                                     <div class="progress progress-xs">
-                                                        <div class="progress-bar progress-bar-danger" style="width: @X.Oran"></div>
+                                                        <div class="@renk" style="width: @X.Oran"></div>
                                                     </div>
                                                 </td>
-                                                <td><span class="badge bg-danger">@X.Oran</span></td>
+                                                <td><span class="@labelrenk">@X.Oran</span></td>
                                             </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div> 
+            </div>
+        </section>
+    </div>
 </body>
 </html>
 
