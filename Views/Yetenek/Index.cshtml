@@ -22,7 +22,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <a href="#" class="btn btn-info">Yeni yetenek ekle</a>
+                                <a href="/Yetenek/YeniYetenek" class="btn btn-info">Yeni yetenek ekle</a>
                                 <br />
                                 <br />
                                 <table class="table table-bordered">
@@ -32,7 +32,8 @@
                                             <th>Yetenek</th>
                                             <th>Derece</th>
                                             <th style="width: 40px">Oran</th>
-                                            <th>İşlemler</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
                                             
                                         </tr>
                                     </thead>
@@ -68,8 +69,20 @@
                                                     </div>
                                                 </td>
                                                 <td><span class="@labelrenk">@X.Oran%</span></td>
-                                                <td><a href="#" class="btn btn-default">Sil</a>
-                                                <a href="#" class="btn btn-default">Günelle</a></td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="/Yetenek/YetenekDüzenle/@X.ID">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Düzenle
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/Yetenek/YetenekSil/@X.ID">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Sil
+                                                    </a>
+                                                </td>
                                             </tr>
                                           }
                                     </tbody>
