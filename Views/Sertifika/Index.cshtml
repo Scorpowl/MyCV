@@ -1,4 +1,5 @@
-﻿
+﻿@using MyCV.Models.Entity
+@model List<TblSertifikalarim>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -20,26 +21,32 @@
                                 <!-- The timeline -->
                                 <div class="timeline timeline-inverse">
                                     <!-- timeline time label -->
-                                    <div class="time-label">
-                                        <span class="bg-success">
-                                            10 Feb. 2014
-                                        </span>
-                                    </div>
-                                    <!-- /.timeline-label -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-comment bg-primary"></i>
-                                        <div class="timeline-item">
-                                            <div class="timeline-body">
-                                                Burası açıklama
-                                            </div>
-                                            <div class="timeline-footer">
-                                                <a href="#" class="btn btn-primary btn-sm">Düzenle</a>
-                                                <a href="#" class="btn btn-danger btn-sm">Sil</a>
+                                    @foreach(var X in Model)
+                                    {
+                                        <div class="time-label">
+                                            <a href="/Sertifika/SertifikaGetir/@X.ID" class="btn btn-success">
+                                                <span class="bg-success">
+                                                    @X.Tarih
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
+                                        <div>
+                                            <i class="fas fa-comment bg-primary"></i>
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @X.Aciklama
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a href="#" class="btn btn-primary btn-sm">Düzenle</a>
+                                                    <a href="#" class="btn btn-danger btn-sm">Sil</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                     }
                                 </div>
+
                                 <!-- /.timeline -->
                             </div>
                         </div>
