@@ -43,6 +43,12 @@ namespace MyCV.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        public ActionResult SertifikaSil(int id)
+        {
+            var sertifika = repo.Find(x => x.ID == id);
+            repo.TDelete(sertifika);
+            return RedirectToAction("Index");
+        }
 
 
 
