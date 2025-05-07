@@ -32,6 +32,17 @@ namespace MyCV.Controllers
             repo.TUpdate(sertifika);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult SertifikaEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SertifikaEkle(TblSertifikalarim p)
+        {
+            repo.TAdd(p);
+            return RedirectToAction("Index");
+        }
 
 
 
