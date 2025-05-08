@@ -51,8 +51,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar(max)" />
           <Property Name="Aciklama1" Type="nvarchar(max)" />
-          <Property Name="Aciklama2" Type="nvarchar(max)" />
+          <Property Name="Etiket" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TblIletisim">
           <Key>
@@ -136,14 +137,6 @@
           <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Foto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="TblHobilerim">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Aciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Aciklama2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TblIletisim">
           <Key>
             <PropertyRef Name="ID" />
@@ -176,11 +169,20 @@
           <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" />
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" />
           <EntitySet Name="TblHakkimda" EntityType="Self.TblHakkimda" />
-          <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" />
           <EntitySet Name="TblIletisim" EntityType="Self.TblIletisim" />
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
+          <EntitySet Name="TblHobilerim" EntityType="MvcCvModel.TblHobilerim" />
         </EntityContainer>
+        <EntityType Name="TblHobilerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Etiket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -232,15 +234,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblHobilerim">
-            <EntityTypeMapping TypeName="MvcCvModel.TblHobilerim">
-              <MappingFragment StoreEntitySet="TblHobilerim">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
-                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblIletisim">
             <EntityTypeMapping TypeName="MvcCvModel.TblIletisim">
               <MappingFragment StoreEntitySet="TblIletisim">
@@ -268,6 +261,16 @@
                 <ScalarProperty Name="Oran" ColumnName="Oran" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHobilerim">
+            <EntityTypeMapping TypeName="MvcCvModel.TblHobilerim">
+              <MappingFragment StoreEntitySet="TblHobilerim">
+                <ScalarProperty Name="Etiket" ColumnName="Etiket" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,7 +14,8 @@ namespace MyCV.Controllers
         GenericRepository<TblIletisim> repo = new GenericRepository<TblIletisim>();
         public ActionResult Index()
         {
-            return View();
+            var mesajlar = repo.List();
+            return View(mesajlar);
         }
     }
 }

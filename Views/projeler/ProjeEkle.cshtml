@@ -1,0 +1,26 @@
+﻿@model MyCV.Models.Entity.TblHobilerim
+@{
+    ViewBag.Title = "ProjeEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Proje Ekle</h2>
+<br />
+
+<form method="post">
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Aciklama1, new { @class = "form-control", rows = 4 })
+    <br />
+
+    @Html.Label("Etiket")
+    @Html.TextBoxFor(x => x.Etiket, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

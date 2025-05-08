@@ -15,7 +15,8 @@ namespace MyCV.Models.Entity
     public partial class TblHobilerim
     {
         public int ID { get; set; }
+        public string Baslik { get; set; }
         public string Aciklama1 { get; set; }
-        public string Aciklama2 { get; set; }
+        public string Etiket { get; set; }
     }
 }
