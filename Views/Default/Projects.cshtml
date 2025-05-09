@@ -2,11 +2,28 @@
 @model List<TblHobilerim>
 
 
-<div class="resume-section-content">
-    <h2 class="mb-5">Projects</h2>
-    @foreach (var x in Model)
+<div class="container-fluid mt-4 ps-3 pe-3">
+
+    <h2 class="mb-4">Projelerim</h2>
+    @foreach (var item in Model)
     {
-        <h1>@x.Aciklama1</h1>
-        <p class="mb-0">@x.Aciklama1</p>
+        <div class="card mb-4 border border-secondary-subtle rounded-3 shadow-sm">
+            <div class="card-header bg-light d-flex">
+                <h3 class="mb-0 flex-grow-1">@item.Baslik</h3>
+            </div>
+
+
+            <div class="card-body bg-white">
+                <p class="card-text text-muted">
+                    @item.Aciklama1
+                </p>
+            </div>
+            <div class="card-footer bg-light">
+                <span class="badge bg-primary me-1">@item.Etiket</span>
+            </div>
+        </div>
     }
+    
+
+
 </div>
