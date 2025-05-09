@@ -31,8 +31,9 @@ namespace MyCV.Controllers
         }
         public ActionResult Sil(int id)
         {
-            var sosyalmedya = repo.Find(x => x.ID == id);
-            repo.TDelete(sosyalmedya);
+            var hesap = repo.Find(x => x.ID == id);
+            hesap.Durum = false;
+            repo.TUpdate(hesap);
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -42,14 +43,16 @@ namespace MyCV.Controllers
             return View(hesap);
         }
         [HttpPost]
-        public ActionResult Guncelle(TblSosyalMedya p)
+        public ActionResult SayfaGetir(TblSosyalMedya p)
         {
             var sosyalmedya = repo.Find(x => x.ID == p.ID);
             sosyalmedya.Ad = p.Ad;
+            sosyalmedya.Durum = true;
             sosyalmedya.Link = p.Link;
             sosyalmedya.ikon = p.ikon;
             repo.TUpdate(sosyalmedya);
             return RedirectToAction("Index");
         }
+        
     }
 }
