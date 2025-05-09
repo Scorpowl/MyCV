@@ -17,5 +17,6 @@ namespace MyCV.Models.Entity
         public int ID { get; set; }
         public string Ad { get; set; }
         public string Link { get; set; }
+        public string ikon { get; set; }
     }
 }

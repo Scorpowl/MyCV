@@ -138,6 +138,7 @@
     <Compile Include="Controllers\iletisimController.cs" />
     <Compile Include="Controllers\projelerController.cs" />
     <Compile Include="Controllers\SertifikaController.cs" />
+    <Compile Include="Controllers\SosyalMedyaController.cs" />
     <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2382,6 +2383,8 @@
     <Content Include="Views\projeler\Index.cshtml" />
     <Content Include="Views\projeler\ProjeEkle.cshtml" />
     <Content Include="Views\projeler\ProjeDüzenle.cshtml" />
+    <Content Include="Views\Default\SosyalMedya.cshtml" />
+    <Content Include="Views\SosyalMedya\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
