@@ -33,5 +33,6 @@ namespace MyCV.Models.Entity
         public virtual DbSet<TblSertifikalarim> TblSertifikalarim { get; set; }
         public virtual DbSet<TblYeteneklerim> TblYeteneklerim { get; set; }
         public virtual DbSet<TblHobilerim> TblHobilerim { get; set; }
+        public virtual DbSet<TblSosyalMedya> TblSosyalMedya { get; set; }
     }
 }
